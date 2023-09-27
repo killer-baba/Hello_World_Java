@@ -1,5 +1,6 @@
 package org.killers;
 
+import org.killers.datastructures.CircularQueue;
 import org.killers.datastructures.LinkedList;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -7,13 +8,24 @@ import org.killers.datastructures.LinkedList;
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList l1 = new LinkedList();
-        l1.add(234);
-        l1.add(345);
-        l1.add(211);
-        System.out.println(l1.size());
-        l1.print();
-        l1.remove(7);
-        l1.print();
+        CircularQueue cq = new CircularQueue(5);
+        cq.enQueue(78);
+        cq.enQueue(88);
+        cq.enQueue(98);
+        cq.enQueue(65);
+        cq.enQueue(45);
+        cq.deQueue();
+        cq.deQueue();
+        cq.deQueue();
+        cq.deQueue();
+        cq.printTestArray();
+        cq.enQueue(32);
+        cq.printTestArray();
+        System.out.println(cq.isEmpty());
+        cq.enQueue(7);
+        cq.enQueue(45);
+        cq.print();
+        System.out.println(cq.isEmpty());
+        cq.printTestArray();
     }
 }
